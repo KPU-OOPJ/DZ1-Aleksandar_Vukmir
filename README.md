@@ -1,1 +1,1 @@
-# DZ1-Aleksandar_Vukmir
+**Kreirati klasu sa odgovarajućim atributima i metodama koja u okviru main metode zahteva od korisnika unos dva realna broja, a zatim obavlja operaciju u zavisnosti od izbora korisnika. Od korisnika se traži izbor jedne od narednih opcija: zbir, razlika, proizvod, količnik i to na osnovu unetih cifara: 1 za zbir, 2 za razliku, 3 za proizvod, 4 za količnik. **
