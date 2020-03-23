@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Kalkulator {
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(double y) {
         this.y = y;
     }
 
@@ -39,10 +39,10 @@ public class Kalkulator {
     }
 
     private String racunaj(String i) {
-        switch (i) { // ovo switch nzm jel ste radili ali to ti je isto kao da pises if vise puta za istu stvar
-            case "1": // vidis ovde se pitamo da li je i 1, pa dole da li je 2 itd
+        switch (i) { 
+            case "1": 
                 System.out.println("Izabrali ste zbir.");
-                if (unos() == 1) { // metoda unos ima povratnu vrednost 0 ili 1. 1 je kada je sve ok a 0 ako nije. idi dole imas objasnjenje sto sam to stavio tako
+                if (unos() == 1) { // metoda unos ima povratnu vrednost 0 ili 1. 1 je kada je sve ok a 0 ako nije.
                     return "Zbir je " + (x + y);
                 } else {
                     return "";
@@ -71,7 +71,7 @@ public class Kalkulator {
                         System.out.println("Ne mozete deliti nulom.");
                         return "";
                     }
-                    return "Kolicnik je " + (double) (x / (double) y); // ovde smo pisali ovo double u zagradama jer u javi ako delis dva integera (sto su celi brojevi) dobijes ceo broj, a to nije tacno matematicki
+                    return "Kolicnik je " + (x / y);
                 } else {
                     return "";
                 }
@@ -87,19 +87,13 @@ public class Kalkulator {
 
         System.out.println("Unesite drugi broj:");
         String yStr = skener.nextLine();
-        /* 
-        prilikom unosa sa tastature on sve tretira kao da je string, ali posto nama trebaju brojevi d bi mogli da ih saberemo 
-        stavljam ovaj deo Integer.parseInt dole sto vidis
-        taj deo koda pretvara string u int ali ako je normalan broj unet u string. ako je uneto neko slobo ili nesto drugo sto on ne zna da 
-        pretvori u broj, onda baci izuzetak. tome sluze ovi try catch delovi. kao sto vidis u ovom catch delu, ako ne uspemo da pretvorimo stirng
-        u broj kako treba, nasa metoda vraca 0 kao nije u redu nesto uneto, nemoj da racunas
-        */
+        
         
         
         
         try {
-            setX(Integer.parseInt(xStr));
-            setY(Integer.parseInt(yStr));
+            setX(Double.parseDouble(xStr));
+            setY(Double.parseDouble(yStr));
 
             return 1;
 
@@ -109,3 +103,4 @@ public class Kalkulator {
         }
     }
 }
+
